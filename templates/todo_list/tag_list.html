@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+
 {% block title %}Tags{% endblock %}
 
 {% block content %}
@@ -22,8 +23,8 @@
         <tr>
           <td>#{{ tag.name }}</td>
           <td class="text-end">
-            <a class="btn btn-outline-primary btn-sm" href="{% url 'todo_list:tag-update' tag.pk %}">Update</a>
-            <a class="btn btn-outline-danger btn-sm" href="{% url 'todo_list:tag-delete' tag.pk %}">Delete</a>
+            <a class="btn btn-primary btn-sm" href="{% url 'todo_list:tag-update' tag.pk %}">Update</a>
+            <a class="btn btn-danger btn-sm" href="{% url 'todo_list:tag-delete' tag.pk %}">Delete</a>
           </td>
         </tr>
       {% endfor %}

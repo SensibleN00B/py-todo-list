@@ -4,7 +4,7 @@
 {% block title %}Task form{% endblock %}
 
 {% block content %}
-  <h1 class="h4 mb-3">Task form</h1>
+  <h1 class="h4 mb-3">{{ object|yesno:"Update,Create" }} task</h1>
   <form method="post">
     {% csrf_token %}
     {{ form|crispy }}

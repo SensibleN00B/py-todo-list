@@ -60,7 +60,7 @@ class TagListView(ListView):
     template_name = "todo_list/tag_list.html"
     context_object_name = "tags"
     ordering = ("name",)
-    paginate_by = 10
+    paginate_by = 7
 
 
 class TagCreateView(CreateView):

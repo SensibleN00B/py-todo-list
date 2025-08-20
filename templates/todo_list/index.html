@@ -13,7 +13,7 @@
   {% if tasks %}
     <div class="list-group">
       {% for task in tasks %}
-        <div class="list-group-item">
+        <div class="list-group-item shadow-sm">
           <div class="d-flex justify-content-between">
             <div>
               <strong>{{ task.content }}</strong>
@@ -31,21 +31,21 @@
               {% if task.tags.all %}
                 <div class="mt-1">
                   {% for tag in task.tags.all %}
-                    <span class="badge bg-info text-dark">#{{ tag.name }}</span>
+                    <span class="badge badge-tag text-dark">#{{ tag.name }}</span>
                   {% empty %}
                   {% endfor %}
                 </div>
               {% endif %}
             </div>
 
-            <div class="d-flex gap-2">
+            <div class="d-flex gap-2 task-actions">
               {% if task.is_done %}
-                <a class="btn btn-outline-warning btn-sm" href="{% url 'todo_list:task-toggle' task.pk %}">Undo</a>
+                <a class="btn btn-success btn-sm" href="{% url 'todo_list:task-toggle' task.pk %}">Undo</a>
               {% else %}
-                <a class="btn btn-outline-success btn-sm" href="{% url 'todo_list:task-toggle' task.pk %}">Complete</a>
+                <a class="btn btn-success btn-sm" href="{% url 'todo_list:task-toggle' task.pk %}">Complete</a>
               {% endif %}
-              <a class="btn btn-outline-primary btn-sm" href="{% url 'todo_list:task-update' task.pk %}">Update</a>
-              <a class="btn btn-outline-danger btn-sm" href="{% url 'todo_list:task-delete' task.pk %}">Delete</a>
+              <a class="btn btn-primary btn-sm" href="{% url 'todo_list:task-update' task.pk %}">Update</a>
+              <a class="btn btn-danger btn-sm" href="{% url 'todo_list:task-delete' task.pk %}">Delete</a>
             </div>
           </div>
         </div>

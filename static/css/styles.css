@@ -1,4 +1,138 @@
-main {
-    margin-top: 20px;
-    margin-bottom: 20px;
+body {
+    background-color: #C7B3C7;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar-nav {
+    margin: 0;
+    padding: 20px 0;
+    height: 100vh;
+}
+
+.sidebar-nav .list-group-item {
+    background-color: #B89BB8;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+.sidebar-nav .list-group-item a {
+    text-decoration: none;
+    color: #2c2c2c;
+    font-weight: bold;
+    padding: 8px 12px;
+}
+
+h1, h3, h4 {
+    margin-top: 10px;
+    color: #2c2c2c;
+}
+
+.table {
+    background-color: #EBDFEB;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.table thead th {
+    background-color: #e1d4ec;
+    border: none;
+}
+
+.table tbody tr {
+    background-color: #f9f6fb;
+    border: none;
+}
+
+.table td,
+.table th {
+    vertical-align: middle;
+    border: none;
+}
+
+.list-group-item {
+    background-color: #EBDFEB;
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.btn-outline-primary {
+    border-color: #6f42c1;
+    color: #6f42c1;
+}
+
+.btn-outline-primary:hover {
+    background-color: #6f42c1;
+    color: #fff;
+}
+
+.btn-outline-success:hover {
+    background-color: #198754;
+    color: #fff;
+}
+
+.btn-outline-danger:hover {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.btn-success {
+    background-color: #7fb77e;
+    border-color: #7fb77e;
+    color: #2c2c2c;
+}
+
+.btn-success:hover {
+    background-color: #5f9360;
+    border-color: #5f9360;
+}
+
+.btn-primary {
+    background-color: #9a7ca2;
+    border-color: #9a7ca2;
+    color: #4a3f4e;
+}
+
+.btn-primary:hover {
+    background-color: #7f5f8f;
+    border-color: #7f5f8f;
+}
+
+.btn-danger {
+    background-color: #d97a9e;
+    border-color: #d97a9e;
+    color: #5c3d5e;
+}
+
+.btn-danger:hover {
+    background-color: #b35f7d;
+    border-color: #b35f7d;
+}
+
+.pagination .page-link {
+    color: #6d5670;
+    background-color: #F3EBF3;
+    border: 1px solid #d1bdd9;
+}
+
+.pagination .page-link:hover {
+    color: #fff;
+    background-color: #9a7ca2;
+    border-color: #9a7ca2;
+}
+
+.task-actions .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 60px;
+    max-height: 40px;
+    text-align: center;
+    border-radius: 6px;
+}
+
+.badge-tag {
+    background-color: #9a7ca2;
+    border-radius: 6px;
 }
