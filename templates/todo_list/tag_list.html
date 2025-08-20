@@ -2,32 +2,35 @@
 {% block title %}Tags{% endblock %}
 
 {% block content %}
-  <div class="d-flex justify-content-between align-items-center mb-3">
+
+  <div class="d-flex justify-content-between align-items-center mb-3 mt-1">
     <h1 class="h3">Tags</h1>
-    <a class="btn btn-primary" href="{% url 'tag-create' %}">Add tag</a>
+    <a class="btn btn-primary" href="{% url 'todo_list:tag-create' %}">Add tag</a>
   </div>
+
 
   {% if tags %}
     <table class="table table-striped align-middle">
       <thead>
-        <tr>
-          <th>Name</th>
-          <th class="text-end">Actions</th>
-        </tr>
+      <tr>
+        <th>Name</th>
+        <th class="text-end">Actions</th>
+      </tr>
       </thead>
       <tbody>
-        {% for tag in tags %}
-          <tr>
-            <td>#{{ tag.name }}</td>
-            <td class="text-end">
-              <a class="btn btn-outline-primary btn-sm" href="{% url 'tag-update' tag.pk %}">Update</a>
-              <a class="btn btn-outline-danger btn-sm" href="{% url 'tag-delete' tag.pk %}">Delete</a>
-            </td>
-          </tr>
-        {% endfor %}
+      {% for tag in tags %}
+        <tr>
+          <td>#{{ tag.name }}</td>
+          <td class="text-end">
+            <a class="btn btn-outline-primary btn-sm" href="{% url 'todo_list:tag-update' tag.pk %}">Update</a>
+            <a class="btn btn-outline-danger btn-sm" href="{% url 'todo_list:tag-delete' tag.pk %}">Delete</a>
+          </td>
+        </tr>
+      {% endfor %}
       </tbody>
     </table>
   {% else %}
-    <p>No tags yet. Click “Add tag.”</p>
+    <p>No tags yet. Click "Add tag".</p>
   {% endif %}
+
 {% endblock %}

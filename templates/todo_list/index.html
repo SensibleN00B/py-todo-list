@@ -3,10 +3,12 @@
 {% block title %}Todo List{% endblock %}
 
 {% block content %}
-  <div class="d-flex justify-content-between align-items-center mb-3">
+
+  <div class="d-flex justify-content-between align-items-center mb-3 mt-1">
     <h1 class="h3">Tasks</h1>
-    <a class="btn btn-primary" href="{% url 'task-create' %}">Add task</a>
+    <a class="btn btn-primary" href="{% url 'todo_list:task-create' %}">Add task</a>
   </div>
+
 
   {% if tasks %}
     <div class="list-group">
@@ -38,18 +40,18 @@
 
             <div class="d-flex gap-2">
               {% if task.is_done %}
-                <a class="btn btn-outline-warning btn-sm" href="{% url 'task-toggle' task.pk %}">Undo</a>
+                <a class="btn btn-outline-warning btn-sm" href="{% url 'todo_list:task-toggle' task.pk %}">Undo</a>
               {% else %}
-                <a class="btn btn-outline-success btn-sm" href="{% url 'task-toggle' task.pk %}">Complete</a>
+                <a class="btn btn-outline-success btn-sm" href="{% url 'todo_list:task-toggle' task.pk %}">Complete</a>
               {% endif %}
-              <a class="btn btn-outline-primary btn-sm" href="{% url 'task-update' task.pk %}">Update</a>
-              <a class="btn btn-outline-danger btn-sm" href="{% url 'task-delete' task.pk %}">Delete</a>
+              <a class="btn btn-outline-primary btn-sm" href="{% url 'todo_list:task-update' task.pk %}">Update</a>
+              <a class="btn btn-outline-danger btn-sm" href="{% url 'todo_list:task-delete' task.pk %}">Delete</a>
             </div>
           </div>
         </div>
       {% endfor %}
     </div>
   {% else %}
-    <p>No tasks yet. Click “Add task.”</p>
+    <p>No tasks yet. Click "Add task".</p>
   {% endif %}
 {% endblock %}
