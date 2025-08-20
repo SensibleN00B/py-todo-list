@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load crispy_forms_filters %}
+
+{% block title %}Tag form{% endblock %}
+
+{% block content %}
+  <h1 class="h4 mb-3">{{ object|yesno:"Update,Create" }} tag</h1>
+  <form method="post">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <div class="d-flex gap-2">
+      <button class="btn btn-primary" type="submit">Save</button>
+      <a class="btn btn-secondary" href="{% url 'todo_list:tag-list' %}">Cancel</a>
+    </div>
+  </form>
+{% endblock %}
